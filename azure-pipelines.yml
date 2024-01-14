@@ -72,6 +72,9 @@ steps:
     publishTestResults: true
     projects: '**/*.Tests.csproj'
 
+- script: dotnet tool install --global dotnet-reportgenerator-globaltool
+  displayName: Install ReportGenerator
+  
 - task: DotNetCoreCLI@2
   displayName: 'Create code coverage report'
   inputs:
