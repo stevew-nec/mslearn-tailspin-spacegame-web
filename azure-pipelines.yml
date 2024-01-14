@@ -61,6 +61,9 @@ steps:
     custom: tool
     arguments: 'restore'
 
+- script: echo "##vso[task.prependpath]$HOME/.dotnet/tools"
+  displayName: 'Update PATH'
+  
 - task: DotNetCoreCLI@2
   displayName: 'Run unit tests - $(buildConfiguration)'
   inputs:
